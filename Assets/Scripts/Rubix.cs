@@ -19,8 +19,18 @@ public class Rubix : MonoBehaviour
         isRotating = false;
         FindPositions(Cubies);
     }
+
+    bool FindPositions(Transform[] Cubies)
     {
+        if (isRotating)
+            return false;
         
+        foreach (var Cubie in Cubies)
+        {
+            if (Cubie.tag == "Cubie")
+            {
+            }
+        }
     }
 
     // Update is called once per frame
