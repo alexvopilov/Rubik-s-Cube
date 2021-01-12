@@ -1,11 +1,25 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Rubix : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private bool isRotating;
+    private short rot_dir;
+    private float speed;
+    enum Axis {x,y}
+    
+    private List<Transform> U = new List<Transform>();
+    private List<Transform> R = new List<Transform>();
+    private List<Transform> L = new List<Transform>();
+    private List<Transform> D = new List<Transform>();
+    private List<Transform> F = new List<Transform>();
+    private List<Transform> B = new List<Transform>();
+
+    private Transform[] Cubies;
+    public Transform TheCenter;
+    
     IEnumerator Rotation(Transform v, Vector3 RotVector)
     {
         isRotating = true;
@@ -91,5 +105,39 @@ public class Rubix : MonoBehaviour
             rot_dir = -1;
         else
             rot_dir = 1;
+
+        if (!isRotating)
+        {
+            if (Input.GetKeyDown(KeyCode.U) && U.Count == 9)
+            {
+                foreach (Transform v in U)
+                    StartCoroutine(Rotation(v,Vector3.up*rot_dir));
+            }
+            else if (Input.GetKeyDown(KeyCode.D) && D.Count == 9)
+            {
+                foreach (Transform v in D)
+                    StartCoroutine(Rotation(v,Vector3.up*rot_dir));
+            }
+            else if (Input.GetKeyDown(KeyCode.L) && L.Count == 9)
+            {
+                foreach (Transform v in L)
+                    StartCoroutine(Rotation(v,Vector3.left*rot_dir));
+            }
+            else if (Input.GetKeyDown(KeyCode.R) && R.Count == 9)
+            {
+                foreach (Transform v in R)
+                    StartCoroutine(Rotation(v,Vector3.right*rot_dir));
+            }
+            else if (Input.GetKeyDown(KeyCode.F) && R.Count == 9)
+            {
+                foreach (Transform v in F)
+                    StartCoroutine(Rotation(v,Vector3.back*rot_dir));
+            }
+            else if (Input.GetKeyDown(KeyCode.B) && B.Count == 9)
+            {
+                foreach (Transform v in B)
+                    StartCoroutine(Rotation(v,Vector3.forward*rot_dir));
+            }
+        }
     }
 }
