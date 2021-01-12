@@ -729,6 +729,7 @@ GameObject:
   - component: {fileID: 894364384}
   - component: {fileID: 894364383}
   - component: {fileID: 894364382}
+  - component: {fileID: 894364385}
   m_Layer: 5
   m_Name: Shuffle
   m_TagString: Untagged
@@ -836,6 +837,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 894364380}
   m_CullTransparentMesh: 0
+--- !u!114 &894364385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894364380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2229210ef65c5fa4d9de32c6f417fe00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -2009,7 +2022,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 196.75, y: -87.62}
+  m_AnchoredPosition: {x: 196.75, y: -87.62012}
   m_SizeDelta: {x: 368.1322, y: 152.83066}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2141973360
@@ -2074,22 +2087,22 @@ PrefabInstance:
     - target: {fileID: 3418799018023997603, guid: a407bca509a01464ea0a1cf130022a06,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3418799018023997603, guid: a407bca509a01464ea0a1cf130022a06,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0065394137
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3418799018023997603, guid: a407bca509a01464ea0a1cf130022a06,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3418799018023997603, guid: a407bca509a01464ea0a1cf130022a06,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.99997866
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3418799018023997603, guid: a407bca509a01464ea0a1cf130022a06,
         type: 3}
@@ -2104,7 +2117,7 @@ PrefabInstance:
     - target: {fileID: 3418799018023997603, guid: a407bca509a01464ea0a1cf130022a06,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0.749
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3418799018023997603, guid: a407bca509a01464ea0a1cf130022a06,
         type: 3}
