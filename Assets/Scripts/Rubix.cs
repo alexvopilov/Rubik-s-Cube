@@ -66,6 +66,13 @@ public class Rubix : MonoBehaviour
             transform.Rotate(new Vector3(0,direction*speed,0),Space.World);
         FindPositions(Cubies);
     }
+
+    private void Start()
+    {
+        isRotating = false;
+        speed = 0.5f;
+        Cubies = GetComponentsInChildren<Transform>();
+        FindPositions(Cubies);
     }
 
     // Update is called once per frame
