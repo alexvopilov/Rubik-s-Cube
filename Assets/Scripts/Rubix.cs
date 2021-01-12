@@ -78,6 +78,14 @@ public class Rubix : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKey(KeyCode.UpArrow))
+            CubeRotate(Axis.x);
+        else if (Input.GetKey(KeyCode.DownArrow))
+            CubeRotate(Axis.x,-1);
+        if (Input.GetKey(KeyCode.LeftArrow))
+            CubeRotate(Axis.y);
+        else if (Input.GetKey(KeyCode.RightArrow))
+            CubeRotate(Axis.y,-1);
         
     }
 }
