@@ -7,18 +7,20 @@ public class Rubix : MonoBehaviour
 {
     private short rot_dir;
     private bool isRotating;
-
-    private List<Transform> U = new List<Transform>();
-    private List<Transform> R = new List<Transform>();
-    private List<Transform> L = new List<Transform>();
-    private List<Transform> D = new List<Transform>();
-    private List<Transform> F = new List<Transform>();
-    private List<Transform> B = new List<Transform>();
-    private Transform[] Cubies;
     
+    [HideInInspector] public List<Transform> U;
+    [HideInInspector] public List<Transform> R;
+    [HideInInspector] public List<Transform> L;
+    [HideInInspector] public List<Transform> D;
+    [HideInInspector] public List<Transform> F;
+    [HideInInspector] public List<Transform> B;
+    [HideInInspector] public List<List<Transform>> sides;
+    
+    private Transform[] Cubies;
+
     public Transform TheCenter;
     
-    IEnumerator Rotation(Transform v, Vector3 RotVector)
+    public IEnumerator Rotation(Transform v, Vector3 RotVector)
     {
         isRotating = true;
         short _angle = 0;
@@ -45,6 +47,15 @@ public class Rubix : MonoBehaviour
         R = new List<Transform>();
         F = new List<Transform>();
         B = new List<Transform>();
+
+        sides = new List<List<Transform>>();
+        sides.Add(U);
+        sides.Add(D);
+        sides.Add(L);
+        sides.Add(R);
+        sides.Add(F);
+        sides.Add(B);
+        
         foreach (var Cubie in Cubies)
         {
             if (Cubie.tag == "Cubie")
