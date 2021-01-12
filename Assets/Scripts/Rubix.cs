@@ -57,6 +57,15 @@ public class Rubix : MonoBehaviour
 
         return true;
     }
+
+    void CubeRotate(Axis _axis, short direction = 1)
+    {
+        if(_axis==Axis.x)
+            transform.Rotate(new Vector3(direction*speed,0,0),Space.World);
+        else if(_axis==Axis.y)
+            transform.Rotate(new Vector3(0,direction*speed,0),Space.World);
+        FindPositions(Cubies);
+    }
     }
 
     // Update is called once per frame
