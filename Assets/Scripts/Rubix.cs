@@ -14,8 +14,8 @@ public class Rubix : MonoBehaviour
     private List<Transform> D = new List<Transform>();
     private List<Transform> F = new List<Transform>();
     private List<Transform> B = new List<Transform>();
-
-    public Transform[] Cubies;
+    private Transform[] Cubies;
+    
     public Transform TheCenter;
     
     IEnumerator Rotation(Transform v, Vector3 RotVector)

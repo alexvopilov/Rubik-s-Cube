@@ -433,6 +433,7 @@ GameObject:
   - component: {fileID: 612361444}
   - component: {fileID: 612361443}
   - component: {fileID: 612361442}
+  - component: {fileID: 612361445}
   m_Layer: 5
   m_Name: Reset
   m_TagString: Untagged
@@ -457,7 +458,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -93.1, y: -33.7}
+  m_AnchoredPosition: {x: -93.099976, y: -33.69995}
   m_SizeDelta: {x: 160.07889, y: 45.03605}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &612361442
@@ -540,6 +541,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 612361440}
   m_CullTransparentMesh: 0
+--- !u!114 &612361445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612361440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f972c1e3c8fab684bbb63c8c2c1c804c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Rubic: {fileID: 3418799018023997628, guid: a407bca509a01464ea0a1cf130022a06, type: 3}
 --- !u!1 &649441205
 GameObject:
   m_ObjectHideFlags: 0

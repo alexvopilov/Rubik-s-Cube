@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Cubie
+  - Rubix
   layers:
   - Default
   - TransparentFX
