@@ -5,11 +5,10 @@ using UnityEngine;
 
 public class Rubix : MonoBehaviour
 {
-    private bool isRotating;
     private short rot_dir;
-    private float speed;
-    enum Axis {x,y}
-    
+    private bool isRotating;
+    public float speed;
+
     private List<Transform> U = new List<Transform>();
     private List<Transform> R = new List<Transform>();
     private List<Transform> L = new List<Transform>();
@@ -17,7 +16,7 @@ public class Rubix : MonoBehaviour
     private List<Transform> F = new List<Transform>();
     private List<Transform> B = new List<Transform>();
 
-    private Transform[] Cubies;
+    public Transform[] Cubies;
     public Transform TheCenter;
     
     IEnumerator Rotation(Transform v, Vector3 RotVector)
@@ -34,7 +33,7 @@ public class Rubix : MonoBehaviour
         FindPositions(Cubies);
     }
 
-    bool FindPositions(Transform[] Cubies)
+    public bool FindPositions(Transform[] Cubies)
     {
         if (isRotating)
             return false;
@@ -72,15 +71,6 @@ public class Rubix : MonoBehaviour
         return true;
     }
 
-    void CubeRotate(Axis _axis, short direction = 1)
-    {
-        if(_axis==Axis.x)
-            transform.Rotate(new Vector3(direction*speed,0,0),Space.World);
-        else if(_axis==Axis.y)
-            transform.Rotate(new Vector3(0,direction*speed,0),Space.World);
-        FindPositions(Cubies);
-    }
-
     private void Start()
     {
         isRotating = false;
@@ -91,15 +81,6 @@ public class Rubix : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.UpArrow))
-            CubeRotate(Axis.x);
-        else if (Input.GetKey(KeyCode.DownArrow))
-            CubeRotate(Axis.x,-1);
-        if (Input.GetKey(KeyCode.LeftArrow))
-            CubeRotate(Axis.y);
-        else if (Input.GetKey(KeyCode.RightArrow))
-            CubeRotate(Axis.y,-1);
-        
         if (Input.GetKey(KeyCode.LeftShift))
             rot_dir = -1;
         else
