@@ -87,5 +87,9 @@ public class Rubix : MonoBehaviour
         else if (Input.GetKey(KeyCode.RightArrow))
             CubeRotate(Axis.y,-1);
         
+        if (Input.GetKey(KeyCode.LeftShift))
+            rot_dir = -1;
+        else
+            rot_dir = 1;
     }
 }
