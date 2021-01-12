@@ -25,12 +25,38 @@ public class Rubix : MonoBehaviour
         if (isRotating)
             return false;
         
+        U = new List<Transform>();
+        D = new List<Transform>();
+        L = new List<Transform>();
+        R = new List<Transform>();
+        F = new List<Transform>();
+        B = new List<Transform>();
         foreach (var Cubie in Cubies)
         {
             if (Cubie.tag == "Cubie")
             {
+                double coord = Math.Round(Cubie.localPosition.y);
+                if(coord == 1)
+                    U.Add(Cubie);
+                else if(coord == -1)
+                    D.Add(Cubie);
+                
+                coord = Math.Round(Cubie.localPosition.x);
+                if(coord == 1)
+                    R.Add(Cubie);
+                else if(coord == -1)
+                    L.Add(Cubie);
+                
+                coord = Math.Round(Cubie.localPosition.z);
+                if(coord == 1)
+                    B.Add(Cubie);
+                else if(coord == -1)
+                    F.Add(Cubie);
             }
         }
+
+        return true;
+    }
     }
 
     // Update is called once per frame
