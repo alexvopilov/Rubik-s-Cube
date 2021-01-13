@@ -94,7 +94,7 @@ public class Rubix : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.D) && D.Count == 9)
             {
                 foreach (Transform v in D)
-                    StartCoroutine(Rotation(v,Vector3.up*rot_dir));
+                    StartCoroutine(Rotation(v,Vector3.down*rot_dir));
             }
             else if (Input.GetKeyDown(KeyCode.L) && L.Count == 9)
             {
