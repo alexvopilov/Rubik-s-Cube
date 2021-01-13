@@ -1,31 +1,23 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraRotation : MonoBehaviour
 {
-    enum Axis {x,y}
+    private Vector3 localRotation;
+    private float speed = 15;
 
-    public Rubix Rubic;
-    
-    void CubeRotate(Axis _axis, short direction = 1)
+    void LateUpdate()
     {
-        if(_axis==Axis.x)
-            transform.RotateAround(Rubic.TheCenter.position,Vector3.left*(Rubic.speed*direction), 1);
-        else if(_axis==Axis.y)
-            transform.RotateAround(Rubic.TheCenter.position,Vector3.up*(Rubic.speed*direction),1);
-        Rubic.FindPositions(Rubic.Cubies);
-    }
-    
-    void Update()
-    {
-        if (Input.GetKey(KeyCode.UpArrow))
-            CubeRotate(Axis.x);
-        else if (Input.GetKey(KeyCode.DownArrow))
-            CubeRotate(Axis.x,-1);
-        if (Input.GetKey(KeyCode.LeftArrow))
-            CubeRotate(Axis.y);
-        else if (Input.GetKey(KeyCode.RightArrow))
-            CubeRotate(Axis.y,-1);
+        if (Input.GetMouseButton(0))
+        {
+            localRotation.x += Input.GetAxis("Mouse X") * speed;
+            localRotation.y += Input.GetAxis("Mouse Y") * -speed;
+            localRotation.y = Mathf.Clamp(localRotation.y, -90, 90);
+        }
+        
+        Quaternion q = Quaternion.Euler(localRotation.y, localRotation.x, 0);
+        transform.parent.rotation = Quaternion.Lerp(transform.parent.rotation, q, Time.deltaTime * speed);
     }
 }

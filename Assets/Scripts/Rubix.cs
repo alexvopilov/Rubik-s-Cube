@@ -7,7 +7,6 @@ public class Rubix : MonoBehaviour
 {
     private short rot_dir;
     private bool isRotating;
-    public float speed;
 
     private List<Transform> U = new List<Transform>();
     private List<Transform> R = new List<Transform>();
@@ -74,7 +73,6 @@ public class Rubix : MonoBehaviour
     private void Start()
     {
         isRotating = false;
-        speed = 0.5f;
         Cubies = GetComponentsInChildren<Transform>();
         FindPositions(Cubies);
     }
