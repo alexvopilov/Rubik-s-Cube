@@ -26,7 +26,7 @@ public class Rubix : MonoBehaviour
         {
             _angle++;
             v.RotateAround(TheCenter.transform.position,RotVector, 1);
-            yield return new WaitForSeconds(Time.deltaTime/5);
+            yield return new WaitForSeconds(Time.fixedDeltaTime/5);
         }
         isRotating = false;
         FindPositions(Cubies);
