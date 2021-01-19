@@ -28,7 +28,7 @@ public class Rubix : MonoBehaviour
         {
             _angle++;
             v.RotateAround(TheCenter.transform.position,RotVector, 1);
-            yield return new WaitForSeconds(0.001f);
+            yield return new WaitForSeconds(Time.fixedDeltaTime/20);
         }
 
         v.position = new Vector3((int)Mathf.Round(v.position.x),(int)Mathf.Round(v.position.y),(int)Mathf.Round(v.position.z));
